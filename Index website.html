@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fresh Market Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-overlay">
+    <h1 class="hero-title">Fresh Market Online</h1>
+    <p class="hero-subtitle">
+      Digitalizing Traditional Markets for Modern Shopping
+    </p>
+  </div>
+</header>
+
+<!-- Search Bar -->
+<div class="search-box">
+  <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProduct()">
+  <div class="filters">
+  <button onclick="filterCategory('all')">All</button>
+  <button onclick="filterCategory('fish')">Fish</button>
+  <button onclick="filterCategory('meat')">Meat</button>
+  <button onclick="filterCategory('seafood')">Seafood</button>
+</div>
+</div>
+
+<!-- Cart Section -->
+<div class="cart">
+  <h3>Your Cart</h3>
+
+  <ul id="cartItems"></ul>
+
+  <p><b>Total Items:</b> <span id="totalItems">0</span></p>
+  <p><b>Total Price:</b> Rp<span id="totalPrice">0</span></p>
+
+  <button class="clear-btn" onclick="clearCart()">Clear Cart</button>
+  <button class="checkout-btn" onclick="checkout()">Checkout</button>
+
+</div>
+
+<!-- Product Modal -->
+<div id="productModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+
+<section class="products">
+    <span class="badge fresh">Fresh Today</span>
+
+  <div class="product" data-category="fish" onclick="openModal('Mackerel')">
+    <img src="images/Mackerel.jpg">
+    <h3>Mackerel</h3>
+    <p>Price: Rp30.000 / kg</p>
+    <button onclick="addToCart('Mackerel')">Add to Cart</button>
+  </div>
+
+  <div class="product" data-category="fish" onclick="openModal('Tuna')">
+     <img src="images/Tuna.jpg">
+    <h3>Tuna</h3>
+    <p>Price: Rp22.000 / kg</p>
+    <button onclick="addToCart('Tuna')">Add to Cart</button>
+  </div>
+
+  <div class="product" data-category="fish" onclick="openModal('Mujair')">
+     <img src="images/Mujair.jpg">
+    <h3>Mujair</h3>
+    <p>Price: Rp20.000 / kg</p>
+    <button onclick="addToCart('Mujair')">Add to Cart</button>
+  </div>
+
+  <div class="product"data-category="meat" onclick="openModal('Beef')">
+     <img src="images/Beef.jpg">
+    <h3>Beef</h3>
+    <p>Price: Rp120.000 / kg</p>
+    <button onclick="addToCart('Beef')">Add to Cart</button>
+  </div>
+
+  <div class="product" data-category="fish" onclick="openModal('Tilapia')">
+     <img src="images/Tilapia.jpg">
+    <h3>Tilapia</h3>
+    <p>Price: Rp40.000 / kg</p>
+    <button onclick="addToCart('Tilapia')">Add to Cart</button>
+  </div>
+
+  <div class="product" data-category="seafood" onclick="openModal('Cockles')">
+     <img src="images/Cockle.webp">
+    <h3>Cockles</h3>
+    <p>Price: Rp25.000 / kg</p>
+    <button onclick="addToCart('Cockles')">Add to Cart</button>
+  </div>
+  
+  <div class="product" data-category="meat" onclick="openModal('Chicken')">
+     <img src="images/Chicken.jpg">
+    <h3>Chicken</h3>
+    <p>Price: Rp30.000 / kg</p>
+    <button onclick="addToCart('Chicken')">Add to Cart</button>
+  </div>
+
+  <div class="product" data-category="seafood" onclick="openModal('Shrimp')">
+     <img src="images/Shrimp.jpg">
+    <h3>Shrimp</h3>
+    <p>Price: Rp30.000 / kg</p>
+    <button onclick="addToCart('Shrimp')">Add to Cart</button>
+  </div>
+</section>
+
+<!-- Chatbot -->
+<div class="chatbox">
+  <h4>Customer Service</h4>
+  <div class="quick-replies">
+  <button onclick="quickReply('products')">🛒 Products</button>
+  <button onclick="quickReply('delivery')">🚚 Delivery</button>
+  <button onclick="quickReply('payment')">💳 Payment</button>
+  <button onclick="quickReply('support')">💬 Support</button>
+</div>
+
+  <div id="chat"></div>
+  <input type="text" id="userInput" placeholder="Type your message..."
+  onkeydown="if(event.key === 'Enter' ) {sendMessage();}">
+  <button type="button" onclick="sendMessage()">Send</button>
+</div>
+
+<script src="script.js"></script>
+<footer class="footer">
+  <p><b>Make Life Easier</b></p>
+  <p>Digitalizing Traditional Markets</p>
+  <p>Email: abdrahimabdi06@gmail.com</p>
+  <p>Location: Pandansari Market,West Balikpapan</p>
+</footer>
+
+</body>
+</html>
+
+

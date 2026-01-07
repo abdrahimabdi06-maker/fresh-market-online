@@ -1,0 +1,411 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  background: #f6f8f7;
+  color: #333;
+}
+
+:root {
+  --primary: #2f7d32;
+  --primary-hover: #256528;
+}
+
+
+/* HEADER */
+.hero {
+  height: 220px;
+  background: linear-gradient(
+      rgba(0,0,0,0.4),
+      rgba(0,0,0,0.4)
+    ),
+    url("https://images.unsplash.com/photo-1542838132-92c53300491e");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  animation: heroFade 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+@keyframes heroFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.hero-title {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  font-size: 18px;
+  margin-top: 10px;
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 180px;
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+  }
+
+  .chatbox {
+    width: 90%;
+    right: 5%;
+    top: auto;
+    bottom: 10px;
+  }
+}
+
+
+header {
+  background: linear-gradient(135deg, #2f7d32, #4caf50);
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+header p {
+  margin-top: 8px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* SEARCH BAR */
+.search-box {
+  text-align: center;
+  margin: 25px 0;
+}
+
+.search-box input {
+  width: 320px;
+  max-width: 90%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* PRODUCTS GRID */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 0 25px 40px;
+}
+
+/* PRODUCT CARD */
+.product {
+  background: white;
+  border-radius: 15px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.15);
+}
+
+.product img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.product h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.product p {
+  margin: 5px 0 12px;
+  font-size: 15px;
+  color: #555;
+}
+
+/* BUTTON */
+.product button {
+  background: #2f7d32;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+.product button:hover {
+  background: #256528;
+}
+
+/* CHATBOT */
+.chatbox {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  border-radius: 15px;
+  padding: 12px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+.chatbox h4 {
+  margin: 5px 0 10px;
+  text-align: center;
+  color: #2f7d32;
+}
+
+#chat {
+  height: 160px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 8px;
+  font-size: 14px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+.chatbox input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.chatbox button {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+.chatbox {
+  max-height: 420px;
+}
+
+.quick-replies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.quick-replies button {
+  flex: 1;
+  background: #e8f5e9;
+  color: #2f7d32;
+  border: 1px solid #c8e6c9;
+  padding: 6px;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.quick-replies button:hover {
+  background: #c8e6c9;
+}
+
+/* CART */
+.cart {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.cart h3 {
+  margin-top: 0;
+  text-align: center;
+  color: #2f7d32;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart button {
+  background: #e53935;
+  border: none;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.cart li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.qty-btn {
+  background: #2f7d32;
+  border: none;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.remove-btn {
+  background: #e53935;
+  border: none;
+  color: white;
+  padding: 3px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.clear-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: #555;
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  .checkout-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+}
+
+/* SCROLL ANIMATION */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MODAL */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  animation: pop 0.4s ease;
+}
+
+@keyframes pop {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.close {
+  float: right;
+  font-size: 22px;
+  cursor: pointer;
+}
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 8px;
+  color: white;
+}
+
+.fresh { background: #4caf50; }
+.best { background: #ff9800; }
+
+.product {
+  position: relative;
+}
+.footer {
+  background: #222;
+  color: #ddd;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
